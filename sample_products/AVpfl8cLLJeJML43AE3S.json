@@ -1,0 +1,25 @@
+{
+  "id": "AVpfl8cLLJeJML43AE3S",
+  "dateAdded": "2016-04-08T18:16:28Z",
+  "name": "Amazon Echo \u201a\u00c4\u00ec White",
+  "asins": "B01E6AO69U,B00L9EPT8O",
+  "brand": "Amazon",
+  "categories": "Stereos,Remote Controls,Audio Docks & Mini Speakers,Kitchen & Dining Features,Home & Tools,Electronics,New Networking,Wireless Speakers,Home, Garage & Office,Portable Speakers,iPod, Audio Player Accessories,Smart Home,Surveillance,Home Improvement,Smart Home & Home Automation Devices,Alarms & Sensors,Amazon Devices,Amazon,Holiday Shop,Kitchen Dining Features,Amazon Echo,Amazon Echo Accessories,Networking,Speaker Systems,TVs Entertainment,Clearance,Smart Hubs & Wireless Routers,Featured Brands,Smart Home & Connected Living,Home Security,Kindle Store,Home Automation,Home,Voice-Enabled Smart Assistants,Virtual Assistant Speakers,Portable Audio & Headphones,Electronics Features,Smart Home Automation,Amazon Device Accessories,Speakers,Smart Hub & Kits,Digital Device 3,Home & Furniture Clearance,Consumer Electronics,Smart Hubs,Home Safety & Security,Voice Assistants,Amazon Home,Virtual Assistant Speakers Displays,Audio",
+  "primaryCategories": "Electronics",
+  "keys": "amazonechowhite/b00l9ept8o,amazonechowhite/b01e6ao69u,amazonechowhite/9sia6v65v09997,841667112862,0841667112862,amazon/b01e6ao69u",
+  "manufacturer": "Amazon",
+  "reviews": [
+    {
+      "reviews.date": "2018-10-15T00:00:00.000Z",
+      "reviews.id": "acb09b35-4a12-4292-8af5-c6dfccbc1442",
+      "reviews.rating": 5,
+      "reviews.text": "Pros: Standard Echo. Cons: Older generation Echo. Other Thoughts: Arrived on time and was new in box."
+    },
+    {
+      "reviews.date": "2018-10-26T00:00:00.000Z",
+      "reviews.id": "2e7b49f4-4ff6-479f-8ac1-36b6fe9a5bdf",
+      "reviews.rating": 5,
+      "reviews.text": "Pros: Got it for under 50, much impressive sound than 2nd gen. Has every other functionality. Cons: May be not trendy looking as newer, but still sets well on my kitchen island"
+    }
+  ]
+}

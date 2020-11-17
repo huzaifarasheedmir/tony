@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+tests/coverage
+
+# Environments
+venv/
+# Ignore IDE files (IDEA)
+.idea/
+data/
+
+#celery
+*celerybeat*
+

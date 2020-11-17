@@ -1,0 +1,52 @@
+version: '3.7'
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:latest
+    environment:
+      RABBITMQ_USER: guest
+      RABBITMQ_PASSWORD: guest
+
+  scheduler:
+    image: tony_tonyetlworker:latest
+    build:
+      context: .
+      dockerfile: ./etl/Dockerfile
+    entrypoint: /tony/bin/run_scheduler.sh
+    volumes:
+    - .:/tony
+    environment:
+      RABBIT_ENV_RABBITMQ_USER: guest
+      RABBIT_ENV_RABBITMQ_PASSWORD: guest
+      SAMPLE_DIR: /tony/sample_products
+      MODEL_PATH: /tony/etl/ml/classifier_model.joblib
+
+  etl:
+    image: tony_tonyetlworker:latest
+#    build:
+#      context: .
+#      dockerfile: ./etl/Dockerfile
+    container_name: etl
+    entrypoint: /tony/bin/run_worker.sh
+    volumes:
+      - .:/tony
+    environment:
+      RABBIT_USER: guest
+      RABBIT_PASSWORD: guest
+      RABBIT_HOST: rabbitmq
+      SAMPLE_DIR: /tony/sample_products
+      MODEL_PATH: /tony/etl/ml/classifier_model.joblib
+
+  mongodb:
+    entrypoint:
+      - /setup/run_mongo.sh
+    image: mongo:latest
+    restart: unless-stopped
+    volumes:
+      - ./bin:/setup/
+      - ./data/mongo:/data/db
+    environment:
+      MONGO_USER: admin
+      MONGO_PASSWORD: password
+      MONGO_DB: tonydb

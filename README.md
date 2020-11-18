@@ -25,5 +25,12 @@ The app has two main services
 - For changing the config or Web service you can change ```web/config.py```
 - For changing the config or ETL service you can change ```etl/config.py```
 
+## Apis
+
+### Api Docs and Screenshots
+Open [Swagger](https://editor.swagger.io/) and paste the content of [ProductsAPIs](https://github.com/huzaifarasheedmir/tony/blob/master/web/products/api.yml) file to see the API docs.
+
+**Below are the screenshots of working APIs tested on Postman**
+
 
 Enjoy!

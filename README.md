@@ -31,6 +31,15 @@ The app has two main services
 Open [Swagger](https://editor.swagger.io/) and paste the content of [ProductsAPIs](https://github.com/huzaifarasheedmir/tony/blob/master/web/products/api.yml) file to see the API docs.
 
 **Below are the screenshots of working APIs tested on Postman**
+- Get categories API
+![image](https://user-images.githubusercontent.com/12775679/99587670-36f58900-2a0b-11eb-80be-a551b934b294.png)
+
+
+- Product Search API
+![image](https://user-images.githubusercontent.com/12775679/99587511-031a6380-2a0b-11eb-98b8-47b79cf10c63.png)
+
+- Product Recommendation response
+![image](https://user-images.githubusercontent.com/12775679/99587760-60161980-2a0b-11eb-8885-6bd823ebf11c.png)
 
 
 Enjoy!

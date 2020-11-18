@@ -45,7 +45,7 @@ class EtlConfig:
     """Config for ETL service"""
 
     FIRE_INTERVAL = float(
-        os.environ.get("ETL_INTERVAL", "20.0")
+        os.environ.get("ETL_INTERVAL", "60.0")
     )  # After how much interval etl execute
     MODEL_PATH = os.environ.get(
         "MODEL_PATH", "classifier_model.joblib"

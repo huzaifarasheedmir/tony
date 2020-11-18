@@ -7,9 +7,11 @@ services:
     environment:
       RABBITMQ_USER: guest
       RABBITMQ_PASSWORD: guest
+    container_name: "rabbitmq"
 
   scheduler:
-    image: tony_tonyetlworker:latest
+    depends_on:
+      - etl
     build:
       context: .
       dockerfile: ./etl/Dockerfile
@@ -21,12 +23,13 @@ services:
       RABBIT_ENV_RABBITMQ_PASSWORD: guest
       SAMPLE_DIR: /tony/sample_products
       MODEL_PATH: /tony/etl/ml/classifier_model.joblib
+    container_name: "scheduler"
 
   etl:
-    image: tony_tonyetlworker:latest
-#    build:
-#      context: .
-#      dockerfile: ./etl/Dockerfile
+#    image: tony_tonyetlworker:latest
+    build:
+      context: .
+      dockerfile: ./etl/Dockerfile
     container_name: etl
     entrypoint: /tony/bin/run_worker.sh
     volumes:
@@ -39,8 +42,8 @@ services:
       MODEL_PATH: /tony/etl/ml/classifier_model.joblib
 
   mongodb:
-    entrypoint:
-      - /setup/run_mongo.sh
+    entrypoint: /setup/run_mongo.sh
+    container_name: "mongodb"
     image: mongo:latest
     restart: unless-stopped
     volumes:
@@ -50,3 +53,19 @@ services:
       MONGO_USER: admin
       MONGO_PASSWORD: password
       MONGO_DB: tonydb
+    ports:
+      - '27017:27017'
+  web:
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
+    entrypoint: /tony/bin/run_web.sh
+    volumes:
+      - ./:/tony
+    environment:
+      MONGO_USER: admin
+      MONGO_PASSWORD: password
+      MONGO_DB: tonydb
+    ports:
+      - '8081:8081'
+    container_name: "web"

@@ -1,0 +1,8 @@
+flask-script==2.0.6
+flask-mongoengine==0.9.5
+mongoengine==0.20.0
+gevent==1.4.0
+gunicorn==20.0.4
+pytest==6.1.2
+PyYAML==5.3.1
+

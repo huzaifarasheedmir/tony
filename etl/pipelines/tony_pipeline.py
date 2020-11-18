@@ -48,7 +48,7 @@ class TonyPipeline:
 
         logger.info("loading data in db . . .")
         self.__prodcut_service.add_from_template(product_template)
-        self.__prodcut_service.aggregate_product_score(
+        self.__prodcut_service.aggregate_product_rating_score(
             product_template["source_product_id"]
         )
 

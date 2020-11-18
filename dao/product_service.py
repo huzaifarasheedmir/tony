@@ -8,7 +8,7 @@ Park Product model related db interactions here
 
 import logging
 from models.product_models import Product, Review
-from models.utils import catch_mongo_exceptions
+from dao.utils import catch_mongo_exceptions
 
 logger = logging.getLogger("dao.product_service")
 
@@ -47,5 +47,9 @@ class ProductService:
         if not product:
             return
         score = Review.objects(product=product).average("score")
-        product.score = score
+        product.rating_score = float("{:.2f}".format(score))
         product.save()
+
+    def list_categories(self):
+        """Get list of categories"""
+        return Product.objects().distinct("category")

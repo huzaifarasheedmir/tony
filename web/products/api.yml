@@ -1,0 +1,62 @@
+swagger: "2.0"
+info:
+  description: "Tony Web Apis"
+  version: "0.0.0"
+  title: "Tony"
+tags:
+- name: "Tony"
+  description: "Tony Product API"
+schemes:
+- "http"
+paths:
+  /v1/products/categories:
+    get:
+      tags:
+      - "Get categories"
+      summary: "Gets product categories"
+      description: "Gets list of available product categories"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "OK"
+        204:
+          description: "No contetn."
+        500:
+          description: "Something went wrong."
+  /v1/products:
+    get:
+      tags:
+      - "Search prodcuts by category and text"
+      summary: "Search products and recommend the best product on behalf of reviews score"
+      description: "earch products and recommend the best product on behalf of reviews score"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "category"
+        in: "query"
+        description: "Product category"
+        required: true
+        type: "string"
+
+      - name: "text"
+        in: "query"
+        description: "Product releavnt text"
+        required: true
+        type: "string"
+
+      - name: "page"
+        in: "query"
+        description: "Page number"
+        required: false
+        type: "integer"
+
+      responses:
+        200:
+          description: "OK"
+        204:
+          description: "No content"
+        401:
+          description: "Unauthorized User."
+        500:
+          description: "Internal Server Error."

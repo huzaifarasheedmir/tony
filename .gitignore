@@ -18,5 +18,4 @@ venv/
 data/
 
 #celery
-*celerybeat*
-
+celerybeat*

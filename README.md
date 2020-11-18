@@ -1,4 +1,4 @@
-#Tony 
+# Tony 
 ### The AI Based product recommender
 
 ### Steps to run the app
@@ -23,7 +23,7 @@ The app has two main services
 **etl** and **web**
 
 - For changing the config or Web service you can change ```web/config.py```
-- For changing the config or Web service you can change ```etl/config.py```
+- For changing the config or ETL service you can change ```etl/config.py```
 
 
 Enjoy!
